@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import detectEthereumProvider from "@metamask/detect-provider";
+import { useEffect } from "react";
+import Web3 from "web3";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  useEffect(() => {
+    (async () => {
+      const provider: any = await detectEthereumProvider();
+      if (provider) {
+        console.log("connected");
+        const x = provider.isConnected();
+        console.log("haha", x);
+      }
+    })();
+  }, []);
+
+  return <div>app</div>;
 }
 
 export default App;
