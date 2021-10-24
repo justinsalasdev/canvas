@@ -1,6 +1,7 @@
 import detectEthereumProvider from "@metamask/detect-provider";
 import { useEffect } from "react";
-import Web3 from "web3";
+import EthWallet from "./components/EthWallet";
+import Subscriber from "./Subscriber";
 
 function App() {
   useEffect(() => {
@@ -14,7 +15,12 @@ function App() {
     })();
   }, []);
 
-  return <div>app</div>;
+  return (
+    <div>
+      <Subscriber />
+      <EthWallet />
+    </div>
+  );
 }
 
 export default App;

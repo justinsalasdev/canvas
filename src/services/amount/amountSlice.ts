@@ -20,3 +20,4 @@ export const amountSlice = createSlice({
 });
 
 export default amountSlice.reducer;
+export const { increment } = amountSlice.actions;
