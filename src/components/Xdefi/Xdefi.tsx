@@ -1,34 +1,26 @@
-import { useEffect, useState } from "react";
-import { dWindow, XFI } from "./types";
-
-const d_window = window as dWindow;
+import { dWindow } from "./types";
 
 export default function Xdefi() {
-  const [provider, setProvider] = useState<XFI>();
-  const [flag, setFlag] = useState(0);
+  function connect() {
+    const d_window = window as dWindow;
 
-  useEffect(() => {
-    if (provider) {
+    if (!d_window.xfi) {
+      //on try again, wait for 1s before running function again
+      console.log("Failed to connect, Install Xdefi, try again");
       return;
     }
-    if ("xfi" in d_window) {
-      setProvider(d_window.xfi);
-    }
-  }, [flag]);
 
-  console.log(provider);
+    if (!d_window.xfi?.ethereum) {
+      console.log("Failed to connect, xdefi might not be your default wallet");
+      console.log(d_window.xfi);
+      return;
+    }
+    d_window.xfi.ethereum.request({ method: "eth_getAccounts" });
+  }
 
   return (
     <div className="bg-primary">
-      <p>{!!provider ? "installed" : "not installed"}</p>
-
-      <button
-        onClick={() => {
-          setFlag((prev) => prev + 1);
-        }}
-      >
-        refresh
-      </button>
+      <button onClick={connect}>connect</button>
     </div>
   );
 }
