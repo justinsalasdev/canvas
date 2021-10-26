@@ -16,5 +16,5 @@ export interface XFI {
 
 export interface dWindow extends Window {
   xfi?: XFI;
-  ethereum?: any;
+  ethereum: any;
 }

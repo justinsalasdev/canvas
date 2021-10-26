@@ -15935,10 +15935,10 @@ usb@^1.6.0:
     node-addon-api "^4.2.0"
     node-gyp-build "^4.3.0"
 
-use-wallet@^0.12.3:
-  version "0.12.3"
-  resolved "https://registry.yarnpkg.com/use-wallet/-/use-wallet-0.12.3.tgz#7f5fda322414be30283255207ae4a75f7b4509f0"
-  integrity sha512-36Z4gXv8SmiJNEmkAJmSWi0HneYYBQP39RQDgQUxvm9OJmq+KPait+8NiJgLCkkxScrdDme8vCZ3OKyynVDZOA==
+use-wallet@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/use-wallet/-/use-wallet-0.13.0.tgz#887794ea7a8f346870e53d42dc8ec7273d813f26"
+  integrity sha512-cOmSlnUGhxk9RbKMiVApbsIYTqoSyRFyG4JqNRob2VgAqIj9hEA0L+bxO1goZjgBFrL9+zEeimMX19NFTCyO6Q==
   dependencies:
     "@aragon/provided-connector" "^6.0.8"
     "@typescript-eslint/parser" "^4.1.0"

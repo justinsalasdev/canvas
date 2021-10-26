@@ -3,7 +3,7 @@ import { dWindow } from "./types";
 export default function Xdefi() {
   function connect() {
     const d_window = window as dWindow;
-
+    // d_window.ethereum.request({ method: "eth_requestAccounts" });
     if (!d_window.xfi) {
       //on try again, wait for 1s before running function again
       console.log("Failed to connect, Install Xdefi, try again");
@@ -15,7 +15,7 @@ export default function Xdefi() {
       console.log(d_window.xfi);
       return;
     }
-    d_window.xfi.ethereum.request({ method: "eth_getAccounts" });
+    d_window.xfi.ethereum.request({ method: "eth_requestAccounts" });
   }
 
   return (
