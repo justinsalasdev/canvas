@@ -9,7 +9,7 @@ import { store } from "./store/store";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <UseWalletProvider>
+      <UseWalletProvider connectors={{ torus: { chainId: 1 } }}>
         <App />
       </UseWalletProvider>
     </Provider>
