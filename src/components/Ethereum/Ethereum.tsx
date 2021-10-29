@@ -1,4 +1,4 @@
-import { TransactionRequest } from "@ethersproject/abstract-provider";
+import Button from "@mui/material/Button";
 import { ethers, utils } from "ethers";
 import { useWallet } from "use-wallet";
 
@@ -81,15 +81,15 @@ export default function Ethereum() {
         <div>
           <div>Account: {wallet.account}</div>
           <div>Balance: {wallet.balance}</div>
-          <button onClick={() => wallet.reset()}>disconnect</button>
+          <Button onClick={() => wallet.reset()}>disconnect</Button>
           <button onClick={signTx}>signTx</button>
         </div>
       ) : (
         <div>
           Connect:
-          <button onClick={connect("injected")}>Metamask</button>
-          <button onClick={connect("injected")}>xdefi</button>
-          <button onClick={connect("torus")}>Torus</button>
+          <Button onClick={connect("injected")}>Metamask</Button>
+          <Button onClick={connect("injected")}>xdefi</Button>
+          <Button onClick={connect("torus")}>Torus</Button>
         </div>
       )}
     </>

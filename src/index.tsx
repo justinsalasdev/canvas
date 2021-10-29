@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import { UseWalletProvider } from "use-wallet";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -9,9 +10,11 @@ import { store } from "./store/store";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <UseWalletProvider connectors={{ torus: { chainId: 1 } }}>
-        <App />
-      </UseWalletProvider>
+      <BrowserRouter>
+        <UseWalletProvider connectors={{ torus: { chainId: 1 } }}>
+          <App />
+        </UseWalletProvider>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
